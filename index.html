@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link rel="stylesheet" href="css/main.css" />
+    <title>WeatherThing</title>
+  </head>
+  <body onload="init_Recents()">
+    <h1 class="py-4 text-center bg-info text-light sticky-top">WeatherThing</h1>
+
+    <section class="text-center py-5">
+      <h1>How is the Weather in..?</h1>
+      <input
+        class="p-2 rounded"
+        id="city"
+        type="text"
+        name="city"
+        id="city"
+        placeholder="Country, City Name"
+      />
+      <button
+        class="btn btn-info"
+        onclick="show_Modal()"
+        data-toggle="modal"
+        data-target="#results"
+      >
+        Check the Weather!
+      </button>
+    </section>
+
+    <div class="modal" id="results">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 id="mh" class="modal-title"></h4>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-dismiss="modal">
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h2 class="text-center">Recent Searches..</h2>
+    <section id="recents"></section>
+    <script src="js/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>

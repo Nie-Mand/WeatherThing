@@ -64,12 +64,6 @@ const get_Data = (city) => {
       "&exclude=minutely,hourly,daily&units=metric&appid=" +
       key
   );
-  let returned = {
-    city: city,
-    state: result.current.weather[0].description,
-    main: result.current.weather[0].main,
-    temp: result.current.temp,
-  };
   return {
     city: city,
     state: result.current.weather[0].description,
@@ -87,6 +81,7 @@ const show_Modal = () => {
     body.innerHTML = "You Have to Enter a City Name First!";
   } else {
     let data = get_Data(city);
+    body.innerHTML = "";
     head.innerHTML = data.city + " : " + data.state + "(" + data.temp + ")";
     if (all_data.filter((i) => i.city == data.city).length == 0) {
       all_data.unshift(data);
